@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islamication — Islamic Learning Experience Platform (LXP)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+/* ============================================================
+   ISLAMICATION — PREMIUM HOMEPAGE WORDPRESS TEMPLATE
+   Tema Desain: Islamic Elegance (Teal & Lime Green Logo + Royal Gold)
+   ============================================================ */
+
+:root {
+  /* Teal Palette (Utama) */
+  --teal-950: #011d15;
+  --teal-900: #033023;
+  --teal-800: #064736;
+  --teal-700: #0b5e48;
+  --teal-600: #0f755a;
+  --teal-500: #148f6e;
+  --teal-400: #1db189;
+  --teal-200: #8ae4cb;
+  --teal-50:  #eefbf7;
+
+  /* Lime/Light Green Palette (Aksen Logo) */
+  --lime-500: #82C91E;
+  --lime-600: #74B816;
+  --lime-100: #E9FAC8;
+  --lime-50:  #F4FCE3;
+
+  /* Gold Palette (Kelebatan Cahaya/Royal Gold) */
+  --gold-900: #3a2205;
+  --gold-700: #7c4c0a;
+  --gold-600: #b06f15;
+  --gold-500: #d98c22;
+  --gold-400: #f5a631;
+  --gold-200: #fad596;
+  --gold-50:  #fefaf2;
+
+  --ink:    #151918;
+  --ink-2:  #2d3533;
+  --ink-3:  #5c6b67;
+  --ink-4:  #8b9e99;
+  --paper:  #f7faf8;
+  --white:  #ffffff;
+
+  --font-arabic: 'Amiri', serif;
+  --font-display: 'Lora', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 36px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* ── UTILITY ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* ============================================================
+   GEOMETRIC BACKGROUND PATTERNS
+   ============================================================ */
+.geo-pattern-overlay {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z M30 10 L50 30 L30 50 L10 30 Z' fill='%23148f6e' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+/* ============================================================
+   HEADER & NAVBAR
+   ============================================================ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(20, 143, 110, 0.1);
+  transition: all .3s ease;
+}
+.navbar.scrolled {
+  box-shadow: 0 10px 30px rgba(1, 29, 21, 0.06);
+  background: rgba(255, 255, 255, 0.98);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 76px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.brand-logo-svg {
+  width: 44px; height: 44px;
+  filter: drop-shadow(0 2px 8px rgba(20, 143, 110, 0.15));
+}
+.nav-logo-text strong {
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 20px;
+  color: var(--teal-900);
+  letter-spacing: -.5px;
+}
+.nav-logo-text small {
+  display: block; font-size: 10px;
+  color: var(--teal-600); font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 6px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14.5px; font-weight: 600;
+  color: var(--ink-2); text-decoration: none;
+  padding: 8px 16px; border-radius: var(--radius-sm);
+  transition: all .2s ease;
+}
+.nav-links a:hover {
+  color: var(--teal-500); background: var(--teal-50);
+}
+.nav-cta {
+  display: flex; align-items: center; gap: 10px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700; font-size: 14px;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  border: none; cursor: pointer;
+  transition: all .25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--teal-700);
+  border: 2px solid var(--teal-400);
+}
+.btn-outline:hover {
+  background: var(--teal-50);
+  border-color: var(--teal-500);
+}
+.btn-primary {
+  background: var(--teal-700);
+  color: white;
+  box-shadow: 0 4px 16px rgba(11, 94, 72, 0.2);
+}
+.btn-primary:hover {
+  background: var(--teal-800);
+  box-shadow: 0 6px 22px rgba(11, 94, 72, 0.35);
+}
+.btn-lime {
+  background: var(--lime-500);
+  color: var(--teal-950);
+  box-shadow: 0 4px 16px rgba(130, 201, 30, 0.25);
+}
+.btn-lime:hover {
+  background: var(--lime-600);
+  box-shadow: 0 6px 22px rgba(130, 201, 30, 0.4);
+}
+.btn-gold {
+  background: var(--gold-500);
+  color: var(--gold-900);
+  box-shadow: 0 4px 16px rgba(217, 140, 34, 0.25);
+}
+.btn-gold:hover {
+  background: var(--gold-600);
+  color: white;
+  box-shadow: 0 6px 22px rgba(217, 140, 34, 0.4);
+}
+.btn-lg { font-size: 16px; padding: 16px 36px; border-radius: var(--radius-lg); }
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--teal-950) 0%, var(--teal-900) 100%);
+  position: relative;
+  display: flex; align-items: center;
+  overflow: hidden;
+  padding-top: 110px;
+  padding-bottom: 60px;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 80% 20%, rgba(130, 201, 30, 0.08) 0%, transparent 45%),
+                    radial-gradient(circle at 10% 80%, rgba(217, 140, 34, 0.08) 0%, transparent 45%);
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(20, 143, 110, 0.15);
+  border: 1px solid rgba(138, 228, 203, 0.25);
+  border-radius: 99px;
+  padding: 6px 16px 6px 10px;
+  margin-bottom: 24px;
+}
+.hero-badge-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--lime-500);
+  box-shadow: 0 0 10px var(--lime-500);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.3)} }
+.hero-badge span {
+  font-size: 12px; font-weight: 700;
+  color: var(--teal-200);
+  text-transform: uppercase; letter-spacing: .08em;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800; line-height: 1.15;
+  color: var(--white); margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+.hero-title em {
+  font-style: normal;
+  background: linear-gradient(to right, var(--gold-200), var(--lime-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-desc {
+  font-size: 17px; line-height: 1.75;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 36px; max-width: 620px;
+}
+
+/* Beautiful Quran Verse Box */
+.quran-box {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--gold-400);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 18px 22px;
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+.quran-arabic {
+  font-family: var(--font-arabic);
+  font-size: 22px; color: var(--gold-200);
+  text-align: right; margin-bottom: 10px;
+  direction: rtl; line-height: 1.6;
+}
+.quran-translation {
+  font-family: var(--font-display);
+  font-size: 13px; font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+.quran-ref {
+  display: block; font-family: var(--font-body);
+  font-size: 11px; font-weight: 700; font-style: normal;
+  color: var(--gold-400); margin-top: 6px;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+
+.hero-actions {
+  display: flex; gap: 14px; flex-wrap: wrap;
+}
+
+/* Hero Right: Interactive Dashboard Simulator */
+.hero-simulator {
+  position: relative;
+}
+.sim-card {
+  background: rgba(1, 29, 21, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.sim-header {
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px; margin-bottom: 18px;
+}
+.sim-badge {
+  background: var(--lime-100); color: var(--lime-600);
+  font-size: 11px; font-weight: 700; padding: 4px 10px;
+  border-radius: 99px; text-transform: uppercase;
+}
+.sim-controls {
+  display: flex; gap: 6px;
+}
+.sim-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+}
+.sim-body {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.sim-flow-item {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  transition: all .2s;
+}
+.sim-flow-item.active {
+  border-color: var(--teal-400);
+  background: rgba(20, 143, 110, 0.12);
+}
+.sim-item-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+}
+.s-video { background: rgba(240, 62, 62, 0.15); color: #ff6b6b; }
+.s-slide { background: rgba(51, 154, 240, 0.15); color: #54b4ff; }
+.s-quiz { background: rgba(250, 176, 5, 0.15); color: #ffd43b; }
+.sim-item-text {
+  flex: 1;
+}
+.sim-item-text h5 { font-size: 13px; font-weight: 700; color: white; }
+.sim-item-text p { font-size: 11px; color: rgba(255, 255, 255, 0.5); margin-top: 2px; }
+
+/* Decorative float metrics */
+.sim-float {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  display: flex; align-items: center; gap: 12px;
+}
+.sim-float-1 {
+  top: -24px; right: -24px;
+  animation: float-y 5s ease-in-out infinite;
+}
+.sim-float-2 {
+  bottom: -24px; left: -24px;
+  animation: float-y 5s ease-in-out infinite 1.2s;
+}
+@keyframes float-y { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.f-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.f-icon.fi-teal { background: rgba(138, 228, 203, 0.15); color: var(--teal-200); }
+.f-icon.fi-lime { background: rgba(130, 201, 30, 0.15); color: var(--lime-500); }
+.f-data h4 { font-size: 15px; font-weight: 800; color: white; }
+.f-data p { font-size: 10px; color: rgba(255,255,255,0.5); }
+
+/* ============================================================
+   SECTION DEFAULTS
+   ============================================================ */
+.section { padding: 110px 0; position: relative; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--teal-700); margin-bottom: 14px;
+}
+.section-label::before, .section-label::after {
+  content: ''; display: block; width: 24px; height: 2px;
+}
+.section-label::before {
+  background: linear-gradient(to right, transparent, var(--lime-500));
+}
+.section-label::after {
+  background: linear-gradient(to left, transparent, var(--teal-400));
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800; line-height: 1.25;
+  color: var(--teal-950); margin-bottom: 18px;
+}
+.section-title em {
+  font-style: italic; font-weight: 400; color: var(--gold-600);
+}
+.section-desc {
+  font-size: 16.5px; line-height: 1.75;
+  color: var(--ink-3); max-width: 600px;
+}
+.section-head { margin-bottom: 64px; }
+.section-head.center { text-align: center; }
+.section-head.center .section-label { justify-content: center; }
+.section-head.center .section-desc { margin-left: auto; margin-right: auto; }
+
+/* ============================================================
+   WHY US: CURRICULUM DRIVEN CORE
+   ============================================================ */
+.why { background: var(--white); }
+.why-grid {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: 72px; align-items: center;
+}
+.why-visual-wrapper {
+  position: relative;
+}
+.why-geometric-card {
+  background: linear-gradient(135deg, var(--teal-900) 0%, var(--teal-950) 100%);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: 0 40px 80px rgba(1, 29, 21, 0.15);
+  position: relative; overflow: hidden;
+}
+.why-geometric-card::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle at right, rgba(130, 201, 30, 0.08) 0%, transparent 60%);
+}
+.why-features {
+  display: flex; flex-direction: column; gap: 28px;
+}
+.why-feat-item {
+  display: flex; gap: 20px; padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all .25s ease;
+  cursor: default;
+}
+.why-feat-item:hover {
+  border-color: rgba(20, 143, 110, 0.15);
+  background: var(--teal-50);
+  transform: translateX(6px);
+}
+.why-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.why-icon.wi-teal { background: var(--teal-50); color: var(--teal-700); border: 1.5px solid rgba(20, 143, 110, 0.15); }
+.why-icon.wi-lime { background: var(--lime-50); color: var(--lime-600); border: 1.5px solid rgba(130, 201, 30, 0.15); }
+.why-icon.wi-gold { background: var(--gold-50); color: var(--gold-600); border: 1.5px solid rgba(217, 140, 34, 0.15); }
+.why-feat-title {
+  font-size: 16px; font-weight: 700; color: var(--teal-950);
+  margin-bottom: 6px;
+}
+.why-feat-desc {
+  font-size: 14px; line-height: 1.6; color: var(--ink-3);
+}
+
+/* ============================================================
+   INTERACTIVE SIMULATOR SECTION (CURRICULUM MAPPING)
+   ============================================================ */
+.interactive-simulator {
+  background: var(--paper);
+}
+.simulator-layout {
+  display: grid; grid-template-columns: 1fr 1.6fr;
+  gap: 32px; margin-top: 48px;
+}
+.sim-sidebar {
+  background: var(--white);
+  border: 1px solid rgba(1, 29, 21, 0.06);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: 0 15px 40px rgba(1, 29, 21, 0.02);
+}
+.sim-control-group {
+  margin-bottom: 20px;
+}
+.sim-control-group label {
+  display: block; font-size: 11px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--teal-700); margin-bottom: 8px;
+}
+.sim-select {
+  width: 100%; padding: 12px 16px;
+  background: var(--teal-50);
+  border: 1.5px solid rgba(20, 143, 110, 0.1);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 14px; font-weight: 600; color: var(--teal-950);
+  outline: none; cursor: pointer;
+  transition: all .2s;
+}
+.sim-select:focus {
+  border-color: var(--teal-500);
+  box-shadow: 0 0 0 4px rgba(20,143,110,0.1);
+}
+
+/* Simulator Canvas */
+.sim-canvas {
+  background: var(--white);
+  border: 1.5px solid rgba(1, 29, 21, 0.06);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(1, 29, 21, 0.03);
+}
+.canvas-header {
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 2px solid var(--teal-50);
+  padding-bottom: 20px; margin-bottom: 24px;
+}
+.canvas-title-area h4 {
+  font-size: 18px; font-weight: 800; color: var(--teal-950);
+}
+.canvas-title-area p {
+  font-size: 12px; color: var(--ink-4); margin-top: 3px;
+}
+.canvas-content {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: 28px;
+}
+.pool-title {
+  font-size: 12px; font-weight: 800; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.pool-items {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.pool-card {
+  background: var(--teal-50);
+  border: 1.5px solid rgba(20, 143, 110, 0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; cursor: pointer;
+  transition: all .2s;
+}
+.pool-card:hover {
+  background: var(--white);
+  border-color: var(--teal-400);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(20, 143, 110, 0.06);
+}
+.pool-card-info {
+  display: flex; align-items: center; gap: 10px;
+  min-w-0;
+}
+.pool-card-badge {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; flex-shrink: 0;
+}
+.pc-v { background: #fff5f5; color: #fa5252; }
+.pc-s { background: #e7f5ff; color: #228be6; }
+.pc-q { background: #fff9db; color: #fab005; }
+.pool-card-text { min-w-0; }
+.pool-card-text h5 { font-size: 12px; font-weight: 700; color: var(--teal-950); truncate: true; }
+.pool-card-text p { font-size: 10px; color: var(--ink-4); margin-top: 2px; }
+
+/* Builder Track */
+.builder-track {
+  background: var(--paper);
+  border: 2px dashed rgba(20, 143, 110, 0.15);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex; flex-direction: column; gap: 10px;
+  min-height: 250px;
+}
+.builder-empty {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; margin: auto; text-align: center;
+  color: var(--ink-4);
+}
+.builder-empty i { font-size: 32px; margin-bottom: 10px; color: var(--teal-200); }
+.builder-empty p { font-size: 12px; max-width: 200px; line-height: 1.5; }
+
+/* Interactive Flow Action Button */
+.builder-publish-btn {
+  width: 100%; display: flex; align-items: center; justify-content: center;
+  gap: 8px; background: var(--teal-700); color: white;
+  border: none; padding: 14px; border-radius: var(--radius-md);
+  font-family: var(--font-body); font-weight: 700; font-size: 13px;
+  cursor: pointer; margin-top: 14px;
+  transition: all .2s;
+}
+.builder-publish-btn:hover { background: var(--teal-800); }
+
+/* ============================================================
+   ECOSYSTEM ROLES SECTION
+   ============================================================ */
+.roles { background: var(--white); }
+.roles-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-top: 16px;
+}
+.role-card {
+  background: var(--paper);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.role-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(1, 29, 21, 0.08);
+  border-color: rgba(20, 143, 110, 0.15);
+}
+.role-badge-num {
+  font-family: var(--font-display);
+  font-size: 14px; font-weight: 700;
+  background: var(--teal-50); color: var(--teal-700);
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; border: 1.5px solid rgba(20, 143, 110, 0.1);
+}
+.role-title {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700; color: var(--teal-950);
+  margin-bottom: 12px;
+}
+.role-desc {
+  font-size: 14px; line-height: 1.6; color: var(--ink-3);
+  margin-bottom: 24px;
+}
+.role-list {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+}
+.role-list-item {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 13px; font-weight: 600; color: var(--ink-2);
+}
+.role-list-item i {
+  color: var(--lime-500); flex-shrink: 0; margin-top: 2px;
+}
+
+/* ============================================================
+   TESTIMONIALS SECTION
+   ============================================================ */
+.testimonials { background: var(--paper); }
+.testi-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.testi-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.04);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: all .3s ease;
+}
+.testi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(1, 29, 21, 0.05);
+}
+.testi-card.featured {
+  background: linear-gradient(135deg, var(--teal-900) 0%, var(--teal-950) 100%);
+  color: white; border: none;
+}
+.testi-quote {
+  font-family: var(--font-display);
+  font-size: 14px; line-height: 1.8;
+  color: var(--ink-2); margin-bottom: 24px;
+  font-style: italic;
+}
+.testi-card.featured .testi-quote { color: rgba(255,255,255,0.85); }
+.testi-quote::before {
+  content: '\201C'; font-size: 52px; color: var(--lime-500);
+  font-family: var(--font-display); line-height: 0;
+  vertical-align: -0.4em; margin-right: 4px;
+}
+.testi-card.featured .testi-quote::before { color: var(--lime-500); }
+.testi-footer { display: flex; align-items: center; gap: 12px; }
+.testi-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px;
+}
+.ta-teal { background: var(--teal-50); color: var(--teal-700); }
+.ta-lime { background: var(--lime-50); color: var(--lime-600); }
+.ta-gold { background: var(--gold-50); color: var(--gold-700); }
+.testi-name { font-size: 14px; font-weight: 700; color: var(--teal-950); }
+.testi-card.featured .testi-name { color: white; }
+.testi-role { font-size: 12px; color: var(--ink-4); }
+.testi-card.featured .testi-role { color: rgba(255,255,255,0.5); }
+.testi-stars { color: var(--gold-400); font-size: 12px; margin-bottom: 14px; letter-spacing: 2px; }
+
+/* ============================================================
+   CALL TO ACTION (CTA)
+   ============================================================ */
+.cta {
+  background: linear-gradient(135deg, var(--teal-950) 0%, var(--teal-900) 100%);
+  position: relative; overflow: hidden;
+  padding: 120px 0;
+}
+.cta::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(45deg, rgba(130, 201, 30, 0.015) 0px, rgba(130, 201, 30, 0.015) 1px, transparent 1px, transparent 48px),
+                    repeating-linear-gradient(-45deg, rgba(130, 201, 30, 0.015) 0px, rgba(130, 201, 30, 0.015) 1px, transparent 1px, transparent 48px);
+}
+.cta-inner {
+  position: relative; z-index: 1; text-align: center;
+}
+.cta-quran {
+  margin-bottom: 32px;
+}
+.cta-arabic {
+  font-family: var(--font-arabic);
+  font-size: 26px; color: var(--gold-200);
+  margin-bottom: 12px; direction: rtl;
+}
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800; color: white;
+  margin-bottom: 16px; line-height: 1.25;
+}
+.cta-title em {
+  font-style: italic; color: var(--lime-500); font-weight: normal;
+}
+.cta-desc {
+  font-size: 17px; color: rgba(255,255,255,0.65);
+  margin-bottom: 40px; max-width: 540px; margin-left: auto; margin-right: auto;
+}
+.cta-actions {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px;
+}
+.cta-logos {
+  display: flex; align-items: center; justify-content: center; gap: 24px;
+  flex-wrap: wrap;
+}
+.cta-logo-label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .12em;
+  color: rgba(255,255,255,0.4); font-weight: 700;
+}
+.cta-badge {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 8px 16px; font-size: 12.5px; font-weight: 600;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--teal-950);
+  padding: 80px 0 40px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 56px; margin-bottom: 56px;
+}
+.footer-logo {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700; color: white;
+}
+.footer-tagline {
+  font-size: 13.5px; line-height: 1.65;
+  color: rgba(255,255,255,0.45); margin-bottom: 24px;
+}
+.footer-social { display: flex; gap: 10px; }
+.footer-social-btn {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: all .2s;
+}
+.footer-social-btn:hover {
+  background: var(--teal-500); color: white; transform: translateY(-2px);
+}
+.footer-col-title {
+  font-size: 12px; font-weight: 800;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase; letter-spacing: .08em;
+  margin-bottom: 20px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  font-size: 14px; color: rgba(255,255,255,0.45);
+  text-decoration: none; transition: color .2s;
+}
+.footer-links a:hover { color: var(--lime-500); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-copy {
+  font-size: 13.5px; color: rgba(255,255,255,0.3);
+}
+.footer-copy strong { color: rgba(255,255,255,0.6); }
+.footer-cert { display: flex; gap: 8px; flex-wrap: wrap; }
+.footer-cert-badge {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 6px 12px; font-size: 11px; font-weight: 700;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   RESPONSIVE DESIGN Breakpoints
+   ============================================================ */
+@media (max-width: 992px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { display: flex; justify-content: center; }
+  .why-grid { grid-template-columns: 1fr; gap: 48px; }
+  .simulator-layout { grid-template-columns: 1fr; }
+  .roles-grid { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+}
+
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .cta-logos { flex-direction: column; gap: 16px; }
+  .canvas-content { grid-template-columns: 1fr; }
+  .nav-cta { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Beranda Islamication">
+        <!-- SVG Reproduksi Logo Islamication HD -->
+        <svg class="brand-logo-svg" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Bintang Geometris Luar (Overlap Squares) -->
+          <path d="M256 16L326.3 120.7H430.7L403.4 221.7L496 256L403.4 290.3L430.7 391.3H326.3L256 496L185.7 391.3H81.3L108.6 290.3L16 256L108.6 221.7L81.3 120.7H185.7L256 16Z" fill="#0b5e48"/>
+          <!-- Aksen Sudut Hijau Terang (Lime Green) -->
+          <rect x="180" y="80" width="40" height="40" rx="6" fill="#82C91E"/>
+          <rect x="292" y="80" width="40" height="40" rx="6" fill="#82C91E"/>
+          <!-- Geometri Bagian Dalam -->
+          <path d="M256 96L368 208V352L256 416L144 352V208L256 96Z" fill="#033023"/>
+          <!-- Lambang Buku Terbuka -->
+          <path d="M256 240C256 240 286 200 340 200V340C286 340 256 380 256 380C256 380 226 340 172 340V200C226 200 256 240 256 240Z" fill="#148f6e"/>
+          <path d="M256 240V380" stroke="#033023" stroke-width="4"/>
+          <!-- Insan Pembelajar (Lingkaran Kepala) -->
+          <circle cx="256" cy="170" r="30" fill="#82C91E"/>
+        </svg>
+        <div class="nav-logo-text">
+          <strong>Islamication</strong>
+          <small>Islamic Learning Experience Platform</small>
+        </div>
+      </a>
+      
+      <ul class="nav-links" role="list">
+        <li><a href="#keunggulan">Keunggulan</a></li>
+        <li><a href="#simulator">Curriculum Builder</a></li>
+        <li><a href="#ekosistem">Ekosistem</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+      </ul>
+      
+      <div class="nav-cta">
+        <a href="#cta" class="btn btn-outline">Masuk</a>
+        <a href="#cta" class="btn btn-primary">Daftar</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="geo-pattern-overlay"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          <span>Curriculum-Driven Islamic LXP</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Membangun Masa Depan<br>
+          Pendidikan Islam <em>Lebih Terarah</em>
+        </h1>
+        
+        <!-- Quranic Verse Integration (Q.S. Al-Baqarah, 2: 148) -->
+        <div class="quran-box">
+          <p class="quran-arabic">وَلِكُلٍّ وِجْهَةٌ هُوَ مُوَلِّيهَا ۖ فَاسْتَبِقُوا الْخَيْرَاتِ</p>
+          <p class="quran-translation">
+            "Dan setiap umat mempunyai kiblat yang dia menghadap kepadanya. Maka berlomba-lombalah kamu dalam kebaikan."
+            <em class="quran-ref">Q.S. Al-Baqarah, 2: 148</em>
+          </p>
+        </div>
+
+        <p class="hero-desc">
+          Ekosistem pendidikan Islam digital terstruktur yang menghubungkan Capaian Pembelajaran nasional dengan modul belajar interaktif, memposisikan guru sebagai desainer pembelajaran masa depan.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#simulator" class="btn btn-lime btn-lg">Uji Coba Simulator Kelas</a>
+          <a href="#keunggulan" class="btn btn-outline btn-lg" style="color:var(--white);border-color:rgba(255,255,255,0.2);">Pelajari Ekosistem ↓</a>
+        </div>
+      </div>
+
+      <!-- Hero Right: Dashboard Visualizer Simulator -->
+      <div class="hero-simulator">
+        <div class="sim-float sim-float-1">
+          <div class="f-icon fi-teal">✓</div>
+          <div class="f-data">
+            <h4>100% Selaras</h4>
+            <p>CP Kurikulum Merdeka</p>
+          </div>
+        </div>
+        
+        <div class="sim-card">
+          <div class="sim-header">
+            <div class="flex items-center gap-2">
+              <span class="sim-badge">Class Builder Active</span>
+            </div>
+            <div class="sim-controls">
+              <span class="sim-dot" style="background:#ff5f56"></span>
+              <span class="sim-dot" style="background:#ffbd2e"></span>
+              <span class="sim-dot" style="background:#27c93f"></span>
+            </div>
+          </div>
+          
+          <div class="sim-body">
+            <p style="font-size: 11px; color: var(--teal-200); text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">Alur Belajar Siswa (Roadmap)</p>
+            <h4 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: white; margin-bottom: 4px;">Kelas 7 — Fiqh Shalat Berjamaah</h4>
+            
+            <div class="sim-flow-item active">
+              <div class="sim-item-icon s-video">▶</div>
+              <div class="sim-item-text">
+                <h5>1. Video Animasi Tata Cara Berjamaah</h5>
+                <p>Aset Konten &bull; 5 Menit &bull; Komunitas Ahli</p>
+              </div>
+              <span style="font-size: 10px; font-weight: 700; color: var(--lime-500);">AKTIF</span>
+            </div>
+            
+            <div class="sim-flow-item">
+              <div class="sim-item-icon s-slide">📄</div>
+              <div class="sim-item-text">
+                <h5>2. Slide PPT Syarat Sah Makmum</h5>
+                <p>Slide Presentasi &bull; 12 Halaman</p>
+              </div>
+              <i data-lucide="lock" style="width: 14px; color: rgba(255,255,255,0.2);"></i>
+            </div>
+
+            <div class="sim-flow-item">
+              <div class="sim-item-icon s-quiz">✓</div>
+              <div class="sim-item-text">
+                <h5>3. Kuis Interaktif Fiqh Masbuq</h5>
+                <p>Kuis Adaptif &bull; 5 Soal Pemahaman</p>
+              </div>
+              <i data-lucide="lock" style="width: 14px; color: rgba(255,255,255,0.2);"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-float sim-float-2">
+          <div class="f-icon fi-lime">🕌</div>
+          <div class="f-data">
+            <h4>MGMP PAI</h4>
+            <p>Kontributor Konten</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     KEUNGGULAN / WHY US
+     ============================================================ -->
+<section class="section why" id="keunggulan" aria-labelledby="why-title">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-visual-wrapper reveal">
+        <div class="why-geometric-card">
+          <div class="flex items-center justify-between mb-6">
+            <span style="font-size:11px; text-transform:uppercase; font-weight:800; color: var(--lime-500); letter-spacing:1px;">Islamic Learning Experience (LXP)</span>
+            <i data-lucide="sparkles" style="color:var(--gold-400); width:20px;"></i>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size:24px; font-weight:800; color:white; line-height:1.3; margin-bottom:14px;">Bukan Sekadar LMS Pengunggah Materi</h3>
+          <p style="font-size:14px; color: rgba(255,255,255,0.7); line-height:1.7; margin-bottom:28px;">
+            Islamication menyambungkan bank konten teruji dari kontributor komunitas dengan struktur silabus resmi Indonesia, membantu guru merakit rute belajar terbaik tanpa membuang waktu mendesain dari nol.
+          </p>
+          
+          <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 18px; border-radius: var(--radius-md);">
+            <p style="font-family: var(--font-display); font-size:13px; font-style:italic; color: var(--gold-200); line-height:1.6;">
+              "Setiap guru adalah desainer peradaban. Kami membekali mereka alat untuk merakit kurikulum masa depan."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-head reveal">
+          <p class="section-label">Fitur Utama Platform</p>
+          <h2 class="section-title">Solusi Kebutuhan <em>Pendidikan Modern</em></h2>
+          <p class="section-desc">Dengan menyatukan teknologi pembelajaran mutakhir dan pemahaman nilai-nilai spiritual yang terstandarisasi.</p>
+        </div>
+
+        <div class="why-features">
+          <div class="why-feat-item reveal">
+            <div class="why-icon wi-teal">
+              <i data-lucide="map-pinned"></i>
+            </div>
+            <div>
+              <div class="why-feat-title">Curriculum-Driven Mapping</div>
+              <div class="why-feat-desc">Sistem memetakan materi secara instan sesuai dengan Capaian Pembelajaran (CP) Kurikulum Merdeka atau KI/KD Kurikulum 13 secara presisi.</div>
+            </div>
+          </div>
+
+          <div class="why-feat-item reveal">
+            <div class="why-icon wi-lime">
+              <i data-lucide="layers"></i>
+            </div>
+            <div>
+              <div class="why-feat-title">Teacher as Learning Designer</div>
+              <div class="why-feat-desc">Pendidik memegang kendali penuh merakit, menambah evaluasi pribadi, dan mempublikasikan perjalanan belajar teratur dalam hitungan klik.</div>
+            </div>
+          </div>
+
+          <div class="why-feat-item reveal">
+            <div class="why-icon wi-gold">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <div>
+              <div class="why-feat-title">Islamic Content Ecosystem</div>
+              <div class="why-feat-desc">Kumpulan slide, kuis, studi kasus moral, dan video pembelajaran yang telah melalui moderasi ketat kebenaran sanad dan kurikulum.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INTERACTIVE CURRICULUM BUILDER SIMULATOR
+     ============================================================ -->
+<section class="section interactive-simulator" id="simulator" aria-labelledby="sim-section-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-label">Uji Coba Simulator</p>
+      <h2 class="section-title">Mulai Merakit <em>Materi Belajarmu</em></h2>
+      <p class="section-desc">Pilih Capaian Pembelajaran (CP) dan rasakan kemudahan merakit silabus interaktif dari Bank Konten Islamication secara instan.</p>
+    </div>
+
+    <!-- Interactive Workspace Grid -->
+    <div class="simulator-layout reveal">
+      <!-- Left Controls Panel -->
+      <div class="sim-sidebar">
+        <h3 style="font-size: 16px; font-weight: 800; color: var(--teal-950); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="sliders-horizontal" style="color:var(--teal-600);"></i> Pemetaan Kurikulum
+        </h3>
+        
+        <div class="sim-control-group">
+          <label>1. Pilih Jenjang</label>
+          <select class="sim-select" id="sim-jenjang" onchange="onSimulatorConfigChange()">
+            <option value="smp">SMP / MTs</option>
+            <option value="sd">SD / MI</option>
+            <option value="sma">SMA / MA</option>
+          </select>
+        </div>
+
+        <div class="sim-control-group">
+          <label>2. Pilih Mata Pelajaran</label>
+          <select class="sim-select" id="sim-mapel" onchange="onSimulatorConfigChange()">
+            <option value="pai">Pendidikan Agama Islam (PAI)</option>
+            <option value="fiqh">Fiqh Ibadah</option>
+          </select>
+        </div>
+
+        <div class="sim-control-group">
+          <label>3. Capaian Pembelajaran (CP)</label>
+          <select class="sim-select" id="sim-cp" onchange="loadSimulatorPool()">
+            <!-- Dynamic Options -->
+          </select>
+        </div>
+        
+        <div style="background: var(--lime-50); border: 1px solid rgba(130,201,30,0.15); padding: 14px; border-radius: var(--radius-md); margin-top: 24px;">
+          <h5 style="font-size:12px; font-weight:800; color:var(--lime-600); margin-bottom:4px;">Asisten Guru Aktif</h5>
+          <p style="font-size:11px; color:var(--ink-3); line-height:1.5;">Pilih salah satu CP di atas untuk menyaring Bank Konten di sebelah kanan.</p>
+        </div>
+      </div>
+
+      <!-- Right Interactive Builder Canvas -->
+      <div class="sim-canvas">
+        <div class="canvas-header">
+          <div class="canvas-title-area">
+            <h4 id="canvas-active-title">Kelas 7 SMP - Memahami Shalat Berjamaah</h4>
+            <p>Penyedia Konten Terstandarisasi &bull; Klik Konten untuk Memasukkan ke Alur</p>
+          </div>
+          <span style="font-size: 11px; font-weight: 700; background: var(--teal-50); color: var(--teal-700); padding: 4px 10px; border-radius: 99px;">Curriculum Map 1.0</span>
+        </div>
+
+        <div class="canvas-content">
+          <!-- Pool Source Column -->
+          <div>
+            <h4 class="pool-title"><i data-lucide="archive-restore" style="width:14px;"></i> Bank Konten Relevan</h4>
+            <div class="pool-items" id="simulator-source-pool">
+              <!-- Dynamic Content Cards -->
+            </div>
+          </div>
+
+          <!-- Target Alur Column -->
+          <div>
+            <h4 class="pool-title"><i data-lucide="route" style="width:14px;"></i> Alur Kelas Siswa (Roadmap)</h4>
+            <div class="builder-track" id="simulator-target-track">
+              <!-- Dynamically Populated -->
+              <div class="builder-empty" id="builder-empty-placeholder">
+                <i data-lucide="plus-circle"></i>
+                <p>Belum ada materi terpilih. Klik salah satu item dari Bank Konten di samping untuk menyusun alur belajar.</p>
+              </div>
+            </div>
+            
+            <button class="builder-publish-btn" onclick="triggerMockPublish()">
+              <i data-lucide="rocket"></i> Publikasikan Kelas ke Siswa
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ECOSYSTEM ROLES SECTION
+     ============================================================ -->
+<section class="section roles" id="ekosistem" aria-labelledby="roles-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-label">Empat Peran Utama</p>
+      <h2 class="section-title">Kolaborasi Ekosistem <em>Islamication</em></h2>
+      <p class="section-desc">Membangun harmoni pembelajaran yang melibatkan seluruh elemen penting di bawah satu platform terintegrasi.</p>
+    </div>
+
+    <div class="roles-grid">
+      <div class="role-card reveal">
+        <div class="role-badge-num">01</div>
+        <h3 class="role-title">Pendidik (Guru)</h3>
+        <p class="role-desc">Bertindak sebagai perancang strategi instruksional. Tidak perlu pusing mendesain video dari nol — cukup susun modul dan pantau keaktifan siswa.</p>
+        <ul class="role-list">
+          <li class="role-list-item"><i data-lucide="check-circle-2"></i> Merakit Roadmap Pembelajaran</li>
+          <li class="role-list-item"><i data-lucide="check-circle-2"></i> Monitoring Progres secara Real-Time</li>
+          <li class="role-list-item"><i data-lucide="check-circle-2"></i> Evaluasi Akhlak &amp; Kuis</li>
+        </ul>
+      </div>
+
+      <div class="role-card reveal">
+        <div class="role-badge-num">02</div>
+        <h3 class="role-title">Peserta Didik</h3>
+        <p class="role-desc">Belajar secara mendalam melalui rute terstruktur yang telah ditetapkan oleh guru, dikemas dalam bentuk yang menyenangkan dan interaktif.</p>
+        <ul class="role-list">
+          <li class="role-list-item"><i data-lucide="check-circle-2"></i> Mengikuti Kelas Terbimbing</li>
+          <li class="role-list-item"><i data-lucide="check-circle-2"></i> Belajar Mandiri dengan Konten Islami</li>
+          <li class="role-list-item"><i data-lucide="check-circle-2"></i> Pengumpulan Jurnal Refleksi</li>
+        </ul>
+      </div>
+
+      <div class="role-card reveal">
+        <div class="role-badge-num">03</div>
+        <h3 class="role-title">Komunitas (Verified)</h3>
+        <p class="role-desc">Mitra dari organisasi dakwah, MGMP PAI, pondok pesantren, dan pakar kurikulum yang menyumbang materi ajar digital berstandar tinggi.</p>
+        <ul class="role-list">
+          <li class="role-list-item"><i data-lucide="check-circle-2"></i> Kontribusi Video &amp; Slide</li>
+          <li class="role-list-item"><i data-lucide="check-circle-2"></i> Pembuatan Modul Tematik</li>
+          <li class="role-list-item"><i data-lucide="check-circle-2"></i> Moderasi dan Uji Sahih Sanad</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONI SECTION
+     ============================================================ -->
+<section class="section testimonials" id="testimoni" aria-labelledby="testi-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-label">Suara Pengguna</p>
+      <h2 class="section-title">Mengapa Guru &amp; Sekolah <em>Menyukai Kami</em></h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Sangat membantu menghemat waktu administrasi kami. Saya tinggal memilih CP Shalat atau Thaharah, lalu alur pembelajaran langsung terisi materi interaktif berkualitas dari pesantren terpercaya.</p>
+        <div class="testi-footer">
+          <div class="testi-avatar ta-teal">AH</div>
+          <div>
+            <div class="testi-name">Ahmad Hanafi, S.Pd.I</div>
+            <div class="testi-role">Guru PAI SMP &bull; Jawa Barat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card featured reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Fitur monitoring progresnya sangat akurat. Siswa belajar lebih mandiri dan antusias mengikuti kuis interaktifnya. Menjawab tantangan belajar anak zaman sekarang.</p>
+        <div class="testi-footer">
+          <div class="testi-avatar ta-lime">UA</div>
+          <div>
+            <div class="testi-name">Ustadzah Aisyah, M.Pd</div>
+            <div class="testi-role">Kepala Madrasah Tsanawiyah &bull; Jawa Timur</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Penyajian materi terstruktur dari berbagai kontributor MGMP membuat variasi pengajaran di kelas saya menjadi jauh lebih menarik, kaya, dan tidak membosankan.</p>
+        <div class="testi-footer">
+          <div class="testi-avatar ta-gold">RM</div>
+          <div>
+            <div class="testi-name">Rahman Mukhtar</div>
+            <div class="testi-role">Guru Agama &bull; Kalimantan Selatan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CALL TO ACTION (CTA) WITH NEW VERSE
+     ============================================================ -->
+<section class="cta" id="cta" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <!-- Islamic Verse Calligraphy Visual -->
+      <div class="cta-quran">
+        <p class="cta-arabic">وَلِكُلٍّ وِجْهَةٌ هُوَ مُوَلِّيهَا ۖ فَاسْتَبِقُوا الْخَيْرَاتِ</p>
+        <p style="font-family: var(--font-display); font-size:14px; font-style:italic; color: var(--gold-200); opacity: 0.8; max-width: 650px; margin: 0 auto; line-height:1.6;">
+          "Maka berlomba-lombalah kamu dalam kebaikan..."
+        </p>
+      </div>
+
+      <h2 class="cta-title">Mari Bergabung dalam <em>Gerakan Dakwah Digital</em></h2>
+      <p class="cta-desc">Mulai bangun ruang kelas PAI digital yang terarah, interaktif, dan terstruktur sesuai standar nasional masa depan.</p>
+      
+      <div class="cta-actions">
+        <a href="#" class="btn btn-lime btn-lg" onclick="alert('Terima kasih atas antusiasme Anda! Pendaftaran akun Pendidik & Sekolah akan segera dibuka pada rilis beta berikutnya.')">Daftar Akun Pendidik</a>
+        <a href="#" class="btn btn-outline btn-lg" style="color:white; border-color:rgba(255,255,255,0.25);" onclick="alert('Hubungi kami di kontributor@islamication.id untuk verifikasi akun MGMP/Pesantren.')">Gabung Kontributor Komunitas</a>
+      </div>
+
+      <div class="cta-logos">
+        <span class="cta-logo-label">Sinergi Kurikulum &amp; Ekosistem</span>
+        <div class="cta-logo-badges">
+          <span class="cta-badge">Kurikulum Merdeka</span>
+          <span class="cta-badge">Kemenag RI</span>
+          <span class="cta-badge">Pesantren Terverifikasi</span>
+          <span class="cta-badge">MGMP PAI Nasional</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" aria-labelledby="footer-brand">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <!-- Logo SVG -->
+          <svg class="brand-logo-svg" style="width:36px; height:36px;" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M256 16L326.3 120.7H430.7L403.4 221.7L496 256L403.4 290.3L430.7 391.3H326.3L256 496L185.7 391.3H81.3L108.6 290.3L16 256L108.6 221.7L81.3 120.7H185.7L256 16Z" fill="#0b5e48"/>
+            <rect x="180" y="80" width="40" height="40" rx="6" fill="#82C91E"/>
+            <rect x="292" y="80" width="40" height="40" rx="6" fill="#82C91E"/>
+            <path d="M256 96L368 208V352L256 416L144 352V208L256 96Z" fill="#033023"/>
+            <path d="M256 240C256 240 286 200 340 200V340C286 340 256 380 256 380C256 380 226 340 172 340V200C226 200 256 240 256 240Z" fill="#148f6e"/>
+            <circle cx="256" cy="170" r="30" fill="#82C91E"/>
+          </svg>
+          <span class="footer-brand" id="footer-brand">Islamication</span>
+        </div>
+        <p class="footer-tagline">“Building the Future of Islamic Education” — Platform penyedia bahan ajar PAI terstruktur yang siap dirakit oleh pendidik sesuai kebutuhan kelas.</p>
+        <div class="footer-social" aria-label="Media Sosial Islamication">
+          <a href="#" class="footer-social-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube">YT</a>
+          <a href="#" class="footer-social-btn" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Platform</div>
+        <ul class="footer-links" role="list">
+          <li><a href="#simulator">Curriculum Builder</a></li>
+          <li><a href="#ekosistem">Class Flow LXP</a></li>
+          <li><a href="#keunggulan">Portal Kontributor</a></li>
+          <li><a href="#testimoni">Kredensial Penulis</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Bahan Ajar</div>
+        <ul class="footer-links" role="list">
+          <li><a href="#">Fiqh Ibadah</a></li>
+          <li><a href="#">Sejarah Islam Nusantara</a></li>
+          <li><a href="#">Aqidah &amp; Adab Mulia</a></li>
+          <li><a href="#">Tafsir Al-Qur'an</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Tentang Kami</div>
+        <ul class="footer-links" role="list">
+          <li><a href="#">Visi Pendidikan Islam</a></li>
+          <li><a href="#">Kerjasama MGMP</a></li>
+          <li><a href="#">Hubungi Admin</a></li>
+          <li><a href="#">Pedoman Sanad Konten</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 <strong>Islamication</strong>. All Rights Reserved. Seluruh materi dakwah dilindungi syariat &amp; hukum kurikulum resmi.</p>
+      <div class="footer-cert" aria-label="Sertifikasi Sistem">
+        <span class="footer-cert-badge">Kemenag Approved</span>
+        <span class="footer-cert-badge">LXP Standard</span>
+        <span class="footer-cert-badge">Sanad Terverifikasi</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     INTERACTIVE APP SIMULATOR CONTROLLER SCRIPT
+     ============================================================ -->
+<script>
+// Mock Content Database categorized by CP
+const simulatorDatabase = {
+  "cp-smp-shalat": [
+    { id: "smp-shal-v1", title: "Video Animasi Shalat Berjamaah", type: "Video", spec: "5 Mins", detail: "Animasi tata cara pelurusan shof & kedudukan imam makmum." },
+    { id: "smp-shal-s1", title: "Slide PPT Hukum Shalat Jamaah", type: "Slide", spec: "12 Slide", detail: "Membahas dalil rukun shalat jamaah dan konsekuensinya." },
+    { id: "smp-shal-q1", title: "Kuis Interaktif Fiqh Masbuq", type: "Quiz", spec: "5 Pertanyaan", detail: "Kuis penalaran masalah makmum masbuq dalam shalat jum'at." },
+    { id: "smp-shal-g1", title: "Studi Kasus: Masbuq Shalat Jum'at", type: "Studi Kasus", spec: "Praktis", detail: "Dilema moral dan analisis fikih komparatif." }
+  ],
+  "cp-smp-thaharah": [
+    { id: "smp-thah-v1", title: "Video Tutorial Tayamum", type: "Video", spec: "8 Mins", detail: "Tata cara tayamum di tempat darurat/pesawat terbang." },
+    { id: "smp-thah-s1", title: "Slide Jenis Air & Pembagian Najis", type: "Slide", spec: "15 Slide", detail: "Klasifikasi najis mutawassithah, mukhaffafah & mughalladhah." },
+    { id: "smp-thah-q1", title: "Kuis Bersuci & Tayamum", type: "Quiz", spec: "10 Pertanyaan", detail: "Uji syarat sah tayamum & hal-hal yang membatalkan." }
+  ],
+  "cp-sd-akhlak": [
+    { id: "sd-akh-v1", title: "Kisah Animasi: Adab Makan Rasulullah", type: "Video", spec: "4 Mins", detail: "Video interaktif mengisahkan sunnah makan tangan kanan." },
+    { id: "sd-akh-q1", title: "Teka-teki Silang Adab Sopan Santun", type: "Quiz", spec: "Sederhana", detail: "Kuis mengasah adab bertegur sapa kepada orang tua." }
+  ],
+  "cp-sma-kontemporer": [
+    { id: "sma-kt-s1", title: "Modul Fiqh Finansial & Dompet Digital", type: "Slide", spec: "18 Hal", detail: "Kajian fikih muamalah kontemporer tentang akad gopay/shopeepay." },
+    { id: "sma-kt-v1", title: "Kajian Sejarah Peradaban Islam Global", type: "Video", spec: "12 Mins", detail: "Video interaktif sains & teknologi di masa Daulah Abbasiyah." }
+  ]
+};
+
+// State Manager
+let selectedTrackItems = [];
+
+// Initialize
+window.addEventListener('DOMContentLoaded', () => {
+  // Populate CP dropdown based on default config
+  onSimulatorConfigChange();
+  
+  // Setup Scroll Reveal effect
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Lucide Icons Render
+  lucide.createIcons();
+});
+
+// Change CP selection options dynamically based on Jenjang/Mapel
+function onSimulatorConfigChange() {
+  const jenjang = document.getElementById('sim-jenjang').value;
+  const cpDropdown = document.getElementById('sim-cp');
+  cpDropdown.innerHTML = '';
+
+  if (jenjang === 'smp') {
+    cpDropdown.innerHTML = `
+      <option value="cp-smp-shalat">CP-01: Tata Cara Shalat Berjamaah &amp; Masbuq</option>
+      <option value="cp-smp-thaharah">CP-02: Ketentuan Thaharah (Bersuci) &amp; Tayamum</option>
+    `;
+  } else if (jenjang === 'sd') {
+    cpDropdown.innerHTML = `
+      <option value="cp-sd-akhlak">CP-01: Adab Harian &amp; Meneladani Akhlak Nabi</option>
+    `;
+  } else if (jenjang === 'sma') {
+    cpDropdown.innerHTML = `
+      <option value="cp-sma-kontemporer">CP-01: Fiqh Kontemporer &amp; Muamalah Modern</option>
+    `;
+  }
+  
+  loadSimulatorPool();
+}
+
+// Load Content Cards in Pool Sidebar based on active CP
+function loadSimulatorPool() {
+  const selectedCP = document.getElementById('sim-cp').value;
+  const pool = document.getElementById('simulator-source-pool');
+  pool.innerHTML = '';
+
+  // Get active text and assign to canvas header title
+  const cpText = document.getElementById('sim-cp').options[document.getElementById('sim-cp').selectedIndex].text;
+  document.getElementById('canvas-active-title').innerText = cpText;
+
+  const matchingAssets = simulatorDatabase[selectedCP] || [];
+
+  matchingAssets.forEach(asset => {
+    // Check if already selected
+    const isAdded = selectedTrackItems.some(item => item.id === asset.id);
+    const actionHtml = isAdded 
+      ? `<span style="font-size: 11px; font-weight:700; color:var(--teal-400); display:flex; align-items:center; gap:2px;"><i data-lucide="check" style="width:14px;"></i> Masuk</span>`
+      : `<button onclick="addAssetToTrack('${asset.id}', '${selectedCP}')" style="background:var(--teal-700); color:white; border:none; padding:4px 10px; font-size:11px; font-weight:700; border-radius:6px; cursor:pointer;">+ Pasang</button>`;
+
+    const card = document.createElement('div');
+    card.className = 'pool-card';
+    card.innerHTML = `
+      <div class="pool-card-info">
+        <div class="pool-card-badge ${getIconBg(asset.type)}">
+          <i data-lucide="${getIcon(asset.type)}"></i>
+        </div>
+        <div class="pool-card-text">
+          <h5>${asset.title}</h5>
+          <p>${asset.type} &bull; ${asset.spec}</p>
+        </div>
+      </div>
+      <div>
+        ${actionHtml}
+      </div>
+    `;
+    pool.appendChild(card);
+  });
+
+  lucide.createIcons();
+}
+
+// Get design token color styling based on item types
+function getIconBg(type) {
+  switch (type) {
+    case 'Video': return 'pc-v';
+    case 'Slide': return 'pc-s';
+    case 'Quiz': return 'pc-q';
+    default: return 'pc-v';
+  }
+}
+
+// Get dynamic icon name based on types
+function getIcon(type) {
+  switch (type) {
+    case 'Video': return 'play-circle';
+    case 'Slide': return 'file-text';
+    case 'Quiz': return 'check-square';
+    default: return 'help-circle';
+  }
+}
+
+// Action: Add content asset from pool to workspace track
+function addAssetToTrack(assetId, cpTag) {
+  const asset = simulatorDatabase[cpTag].find(item => item.id === assetId);
+  if (!asset) return;
+
+  // Avoid duplications
+  if (selectedTrackItems.some(i => i.id === assetId)) return;
+
+  selectedTrackItems.push(asset);
+  renderTrack();
+  loadSimulatorPool(); // Update button state
+}
+
+// Action: Remove content asset from target workspace track
+function removeAssetFromTrack(assetId) {
+  selectedTrackItems = selectedTrackItems.filter(item => item.id !== assetId);
+  renderTrack();
+  loadSimulatorPool();
+}
+
+// Render selected items on Roadmap Builder Track
+function renderTrack() {
+  const track = document.getElementById('simulator-target-track');
+  const emptyPlaceholder = document.getElementById('builder-empty-placeholder');
+
+  // Clear previous rendering except the placeholder
+  track.querySelectorAll('.track-item').forEach(el => el.remove());
+
+  if (selectedTrackItems.length === 0) {
+    emptyPlaceholder.style.display = 'flex';
+    return;
+  }
+
+  emptyPlaceholder.style.display = 'none';
+
+  selectedTrackItems.forEach((asset, index) => {
+    const item = document.createElement('div');
+    item.className = 'track-item';
+    item.style = 'background:white; border: 1.5px solid rgba(20,143,110,0.1); padding:12px; border-radius:10px; display:flex; align-items:center; justify-content:between; gap:12px;';
+    item.innerHTML = `
+      <div style="display:flex; align-items:center; gap:10px; flex:1; min-width:0;">
+        <span style="font-size:11px; font-weight:800; background:var(--teal-50); color:var(--teal-700); width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center;">${index + 1}</span>
+        <div style="min-width:0;">
+          <h5 style="font-size:12px; font-weight:800; color:var(--teal-950); margin:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${asset.title}</h5>
+          <p style="font-size:10px; color:var(--ink-4); margin:2px 0 0 0;">${asset.type} &bull; ${asset.spec}</p>
+        </div>
+      </div>
+      <button onclick="removeAssetFromTrack('${asset.id}')" style="background:none; border:none; color:var(--ink-4); cursor:pointer;" class="hover:text-red-500">
+        <i data-lucide="trash-2" style="width:14px; height:14px;"></i>
+      </button>
+    `;
+    track.appendChild(item);
+  });
+
+  lucide.createIcons();
+}
+
+// Simulate Published Action
+function triggerMockPublish() {
+  if (selectedTrackItems.length === 0) {
+    alert("Silakan pasang minimal 1 konten dari Bank Konten sebelum mempublikasikan kelas!");
+    return;
+  }
+  
+  const classTitle = document.getElementById('canvas-active-title').innerText;
+  alert(`Alur pembelajaran untuk "${classTitle}" berhasil diterbitkan ke halaman siswa!\n\nSiswa akan menerima notifikasi kelas dan mulai belajar sesuai susunan linear yang Anda rancang.`);
+}
+
+// Shadow Navbar on Scroll
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 20) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+</script>
+
+</body>
+</html>
